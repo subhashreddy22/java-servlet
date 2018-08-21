@@ -8,6 +8,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 
+@WebServlet(value = "/welcome") // This can be used instead of servlet-mapping in web.xml
 public class FirstServlet implements Servlet {
 
 	@Override
