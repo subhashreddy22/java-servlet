@@ -26,25 +26,4 @@ Important code to remember:
 		<url-pattern>/welcome</url-pattern>
 	</servlet-mapping>
 	
-index.html must be plcaed in the correct directory otherwise it will not be read.
-
-**Project Structure**
-
-Project
-   |
-   |-------Java Resources
-   |            |
-   |           src
-   |
-   |-------Web Content
-                |
-                |----------META-INF
-                |
-                |----------WEB-INF
-                |             |
-                |             |-------lib
-                |             |
-                |             |-------web.xml
-                |
-                |
-                |----------index.html             
+index.html must be placed in the correct directory WebContent otherwise it will not be read.
