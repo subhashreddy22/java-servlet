@@ -10,7 +10,7 @@ Run the servlet on a Tomcat Server as below
 
 http://localhost:{port}/{project-name}/{url-pattern}
 
-First when Tomcat is started it may give 404 error as index.html is missing.
+First when Tomcat is started it may give 404 error if elcome files such as index.html is missing.
 
 Instead of specifying the url-pattern in web.xml it can be done in @WebServlet annotation on the class.
 
@@ -25,3 +25,26 @@ Important code to remember:
 		<servlet-name>first</servlet-name>
 		<url-pattern>/welcome</url-pattern>
 	</servlet-mapping>
+	
+index.html must be plcaed in the correct directory otherwise it will not be read.
+
+**Project Structure**
+
+Project
+   |
+   |-------Java Resources
+   |            |
+   |           src
+   |
+   |-------Web Content
+                |
+                |----------META-INF
+                |
+                |----------WEB-INF
+                |             |
+                |             |-------lib
+                |             |
+                |             |-------web.xml
+                |
+                |
+                |----------index.html             
