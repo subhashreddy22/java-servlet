@@ -1,4 +1,4 @@
-package com.webapp;
+package com.webapp.login;
 
 import java.io.IOException;
 
@@ -15,7 +15,6 @@ public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private LoginService loginService = new LoginService();
-	private TodoService todoService = new TodoService();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,14 +37,12 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String name = request.getParameter("name");
-		request.setAttribute("name", name);
 		String password = request.getParameter("password");
-		request.setAttribute("password", password);
 		boolean isValid = loginService.validate(name, password);
 
 		if (isValid) {
-			request.setAttribute("todos", todoService.getTodoList());
-			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+			request.setAttribute("name", name);
+			response.sendRedirect("/todo.do");
 		} else {
 			request.setAttribute("errorMessage", "Invalid username or password");
 			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
